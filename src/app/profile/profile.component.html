@@ -1,0 +1,16 @@
+<mat-grid-list cols="5">
+  <mat-grid-tile-header>
+    <button mat-raised-button color="primary" (click)="openCreateNewNote()">Create new note</button>
+  </mat-grid-tile-header>
+  <mat-grid-tile *ngFor="let note of notes; index as i">
+    <mat-card>
+      <mat-card-title>{{note.name}}</mat-card-title>
+      <mat-card-content>{{note.content}}</mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="openEditNote(note.id, i)">Edit</button>
+        <button mat-raised-button color="primary" (click)="openAddEditorDialog(note.id, i)">Add editor</button>
+        <button mat-raised-button color="warn" (click)="deleteNote(note.id, i)">Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

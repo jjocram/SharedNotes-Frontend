@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Add editor for {{data.name}}</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Editor's username</mat-label>
+    <input matInput [(ngModel)]="data.editor">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.editor" cdkFocusInitial>Ok</button>
+</div>
